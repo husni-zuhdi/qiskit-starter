@@ -3,6 +3,12 @@ from qiskit import QuantumCircuit, transpile
 from qiskit.providers.aer import QasmSimulator
 from qiskit.visualization import plot_histogram
 import matplotlib.pyplot as plt
+from qiskit import IBMQ
+
+# Load API Key from .env file
+from decouple import config
+IBMQ.save_account(config('IBM_TOKEN'))
+
 
 # Set AER Qasm Simulator
 simulator = QasmSimulator()
